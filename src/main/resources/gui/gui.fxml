@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="mainPane" maxHeight="1.7976931348623157E308"
+            maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="369.0"
+            prefWidth="332.0" xmlns="http://javafx.com/javafx/8.0.60"
+            fx:controller="com.nikecow.yahtzee.gui.Controller">
+
+    <children>
+        <AnchorPane layoutX="159.0" layoutY="-29.0" prefHeight="361.0" prefWidth="326.0" AnchorPane.bottomAnchor="20.0"
+                    AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+            <children>
+                <VBox mouseTransparent="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                      AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <HBox fx:id="aboutContent" prefHeight="165.0" prefWidth="292.0" VBox.vgrow="ALWAYS">
+                            <children>
+                                <VBox prefHeight="296.0" prefWidth="0.0" HBox.hgrow="ALWAYS"/>
+                                <VBox prefHeight="296.0" prefWidth="96.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Text fx:id="aboutTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Title">
+                                            <font>
+                                                <Font name="System Bold" size="17.0"/>
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets bottom="10.0"/>
+                                            </VBox.margin>
+                                        </Text>
+                                        <TextArea fx:id="aboutInfo" editable="false" prefHeight="223.0"
+                                                  prefWidth="194.0" text="asdas" VBox.vgrow="ALWAYS"/>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                        <HBox alignment="BOTTOM_RIGHT" prefHeight="0.0" prefWidth="292.0" VBox.vgrow="ALWAYS"/>
+                    </children>
+                </VBox>
+                <VBox fx:id="mainContent" prefHeight="352.0" prefWidth="326.0" AnchorPane.bottomAnchor="0.0"
+                      AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <VBox prefHeight="103.0" prefWidth="239.0">
+                            <children>
+                                <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0"
+                                      prefWidth="292.0" spacing="10.0" VBox.vgrow="NEVER">
+                                    <children>
+                                        <ImageView fx:id="dobbelField1" fitHeight="50.0" fitWidth="50.0"
+                                                   pickOnBounds="true" preserveRatio="true">
+                                            <cursor>
+                                                <Cursor fx:constant="HAND"/>
+                                            </cursor>
+                                        </ImageView>
+                                        <ImageView fx:id="dobbelField2" fitHeight="50.0" fitWidth="50.0" layoutX="56.0"
+                                                   layoutY="-42.0" pickOnBounds="true" preserveRatio="true">
+                                            <cursor>
+                                                <Cursor fx:constant="HAND"/>
+                                            </cursor>
+                                        </ImageView>
+                                        <ImageView fx:id="dobbelField3" fitHeight="50.0" fitWidth="50.0" layoutX="161.0"
+                                                   layoutY="-42.0" pickOnBounds="true" preserveRatio="true">
+                                            <cursor>
+                                                <Cursor fx:constant="HAND"/>
+                                            </cursor>
+                                        </ImageView>
+                                        <ImageView fx:id="dobbelField4" fitHeight="50.0" fitWidth="50.0" layoutX="56.0"
+                                                   layoutY="-42.0" pickOnBounds="true" preserveRatio="true">
+                                            <cursor>
+                                                <Cursor fx:constant="HAND"/>
+                                            </cursor>
+                                        </ImageView>
+                                        <ImageView fx:id="dobbelField5" fitHeight="50.0" fitWidth="50.0" layoutX="371.0"
+                                                   layoutY="-42.0" pickOnBounds="true" preserveRatio="true">
+                                            <cursor>
+                                                <Cursor fx:constant="HAND"/>
+                                            </cursor>
+                                        </ImageView>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" prefHeight="759.0" prefWidth="326.0" VBox.vgrow="ALWAYS">
+                                    <children>
+                                        <Button fx:id="gooiButton" mnemonicParsing="false" prefHeight="25.0"
+                                                prefWidth="76.0" text="Gooi">
+                                            <font>
+                                                <Font name="System Bold" size="12.0"/>
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="10.0" top="10.0"/>
+                                    </padding>
+                                </HBox>
+                            </children>
+                        </VBox>
+                        <HBox prefHeight="175.0" prefWidth="326.0">
+                            <children>
+                                <VBox prefWidth="129.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Button fx:id="categorieEnen" maxHeight="1.7976931348623157E308"
+                                                maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="enen"
+                                                VBox.vgrow="ALWAYS">
+                                            <font>
+                                                <Font name="System Bold" size="12.0"/>
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="categorieTweeen" maxHeight="1.7976931348623157E308"
+                                                maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="tweeën"
+                                                VBox.vgrow="ALWAYS">
+                                            <font>
+                                                <Font name="System Bold" size="12.0"/>
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="categorieDrieen" maxHeight="1.7976931348623157E308"
+                                                maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="drieën"
+                                                VBox.vgrow="ALWAYS">
+                                            <font>
+                                                <Font name="System Bold" size="12.0"/>
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="categorieVieren" maxHeight="1.7976931348623157E308"
+                                                maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="vieren"
+                                                VBox.vgrow="ALWAYS">
+                                            <font>
+                                                <Font name="System Bold" size="12.0"/>
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="categorieVijven" maxHeight="1.7976931348623157E308"
+                                                maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="vijven"
+                                                VBox.vgrow="ALWAYS">
+                                            <font>
+                                                <Font name="System Bold" size="12.0"/>
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="categorieZessen" maxHeight="1.7976931348623157E308"
+                                                maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="zessen"
+                                                VBox.vgrow="ALWAYS">
+                                            <font>
+                                                <Font name="System Bold" size="12.0"/>
+                                            </font>
+                                        </Button>
+                                        <Label text="TOTAAL">
+                                            <font>
+                                                <Font name="System Bold" size="12.0"/>
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets bottom="4.0" top="4.0"/>
+                                            </VBox.margin>
+                                        </Label>
+                                    </children>
+                                </VBox>
+                                <VBox prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <TextArea fx:id="enenField" editable="false" maxHeight="1.7976931348623157E308"
+                                                  maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                                                  minWidth="-Infinity" prefHeight="0.0" prefWidth="20.0"
+                                                  VBox.vgrow="ALWAYS">
+                                            <VBox.margin>
+                                                <Insets left="5.0" right="20.0"/>
+                                            </VBox.margin>
+                                            <font>
+                                                <Font size="10.0"/>
+                                            </font>
+                                        </TextArea>
+                                        <TextArea fx:id="tweeenField" editable="false"
+                                                  maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                                                  minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0"
+                                                  prefWidth="20.0" VBox.vgrow="ALWAYS">
+                                            <VBox.margin>
+                                                <Insets left="5.0" right="20.0"/>
+                                            </VBox.margin>
+                                            <font>
+                                                <Font size="10.0"/>
+                                            </font>
+                                        </TextArea>
+                                        <TextArea fx:id="drieenField" editable="false"
+                                                  maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                                                  minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0"
+                                                  prefWidth="20.0" VBox.vgrow="ALWAYS">
+                                            <VBox.margin>
+                                                <Insets left="5.0" right="20.0"/>
+                                            </VBox.margin>
+                                            <font>
+                                                <Font size="10.0"/>
+                                            </font>
+                                        </TextArea>
+                                        <TextArea fx:id="vierenField" editable="false"
+                                                  maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                                                  minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0"
+                                                  prefWidth="20.0" VBox.vgrow="ALWAYS">
+                                            <VBox.margin>
+                                                <Insets left="5.0" right="20.0"/>
+                                            </VBox.margin>
+                                            <font>
+                                                <Font size="10.0"/>
+                                            </font>
+                                        </TextArea>
+                                        <TextArea fx:id="vijvenField" editable="false"
+                                                  maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                                                  minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0"
+                                                  prefWidth="20.0" VBox.vgrow="ALWAYS">
+                                            <VBox.margin>
+                                                <Insets left="5.0" right="20.0"/>
+                                            </VBox.margin>
+                                            <font>
+                                                <Font size="10.0"/>
+                                            </font>
+                                        </TextArea>
+                                        <TextArea fx:id="zessenField" editable="false"
+                                                  maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                                                  minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0"
+                                                  prefWidth="20.0" VBox.vgrow="ALWAYS">
+                                            <VBox.margin>
+                                                <Insets left="5.0" right="20.0"/>
+                                            </VBox.margin>
+                                            <font>
+                                                <Font size="10.0"/>
+                                            </font>
+                                        </TextArea>
+                                        <TextArea fx:id="totaalField" editable="false"
+                                                  maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                                                  minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0"
+                                                  prefWidth="20.0" VBox.vgrow="ALWAYS">
+                                            <VBox.margin>
+                                                <Insets left="5.0" right="20.0"/>
+                                            </VBox.margin>
+                                            <font>
+                                                <Font size="10.0"/>
+                                            </font>
+                                        </TextArea>
+                                    </children>
+                                    <HBox.margin>
+                                        <Insets/>
+                                    </HBox.margin>
+                                </VBox>
+                                <VBox prefHeight="175.0" prefWidth="50.0" HBox.hgrow="ALWAYS"/>
+                                <VBox prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <TextArea fx:id="driedezelfdeField" editable="false"
+                                                  maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                                                  minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0"
+                                                  prefWidth="20.0" VBox.vgrow="ALWAYS">
+                                            <VBox.margin>
+                                                <Insets left="20.0" right="5.0"/>
+                                            </VBox.margin>
+                                            <font>
+                                                <Font size="10.0"/>
+                                            </font>
+                                        </TextArea>
+                                        <TextArea fx:id="carreField" editable="false" maxHeight="1.7976931348623157E308"
+                                                  maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                                                  minWidth="-Infinity" prefHeight="0.0" prefWidth="20.0"
+                                                  VBox.vgrow="ALWAYS">
+                                            <VBox.margin>
+                                                <Insets left="20.0" right="5.0"/>
+                                            </VBox.margin>
+                                            <font>
+                                                <Font size="10.0"/>
+                                            </font>
+                                        </TextArea>
+                                        <TextArea fx:id="fullhouseField" editable="false"
+                                                  maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                                                  minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0"
+                                                  prefWidth="20.0" VBox.vgrow="ALWAYS">
+                                            <VBox.margin>
+                                                <Insets left="20.0" right="5.0"/>
+                                            </VBox.margin>
+                                            <font>
+                                                <Font size="10.0"/>
+                                            </font>
+                                        </TextArea>
+                                        <TextArea fx:id="kleineField" editable="false"
+                                                  maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                                                  minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0"
+                                                  prefWidth="20.0" VBox.vgrow="ALWAYS">
+                                            <VBox.margin>
+                                                <Insets left="20.0" right="5.0"/>
+                                            </VBox.margin>
+                                            <font>
+                                                <Font size="10.0"/>
+                                            </font>
+                                        </TextArea>
+                                        <TextArea fx:id="groteField" editable="false" maxHeight="1.7976931348623157E308"
+                                                  maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+                                                  minWidth="-Infinity" prefHeight="0.0" prefWidth="20.0"
+                                                  VBox.vgrow="ALWAYS">
+                                            <VBox.margin>
+                                                <Insets left="20.0" right="5.0"/>
+                                            </VBox.margin>
+                                            <font>
+                                                <Font size="10.0"/>
+                                            </font>
+                                        </TextArea>
+                                        <TextArea fx:id="yahtzeeField" editable="false"
+                                                  maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                                                  minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0"
+                                                  prefWidth="20.0" VBox.vgrow="ALWAYS">
+                                            <VBox.margin>
+                                                <Insets left="20.0" right="5.0"/>
+                                            </VBox.margin>
+                                            <font>
+                                                <Font size="10.0"/>
+                                            </font>
+                                        </TextArea>
+                                        <TextArea fx:id="chanceField" editable="false"
+                                                  maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                                                  minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0"
+                                                  prefWidth="20.0" VBox.vgrow="ALWAYS">
+                                            <VBox.margin>
+                                                <Insets left="20.0" right="5.0"/>
+                                            </VBox.margin>
+                                            <font>
+                                                <Font size="10.0"/>
+                                            </font>
+                                        </TextArea>
+                                    </children>
+                                </VBox>
+                                <VBox layoutX="10.0" layoutY="10.0" prefWidth="129.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Button fx:id="categorieDriedezelfde" maxHeight="1.7976931348623157E308"
+                                                maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                                                text="3 dezelfde" VBox.vgrow="ALWAYS">
+                                            <font>
+                                                <Font name="System Bold" size="12.0"/>
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="categorieCarre" maxHeight="1.7976931348623157E308"
+                                                maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                                                text="4 dezelfde" VBox.vgrow="ALWAYS">
+                                            <font>
+                                                <Font name="System Bold" size="12.0"/>
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="categorieFullhouse" maxHeight="1.7976931348623157E308"
+                                                maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                                                text="full house" VBox.vgrow="ALWAYS">
+                                            <font>
+                                                <Font name="System Bold" size="12.0"/>
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="categorieKleine" maxHeight="1.7976931348623157E308"
+                                                maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                                                text="kleine str." VBox.vgrow="ALWAYS">
+                                            <font>
+                                                <Font name="System Bold" size="12.0"/>
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="categorieGrote" maxHeight="1.7976931348623157E308"
+                                                maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                                                text="grote str." VBox.vgrow="ALWAYS">
+                                            <font>
+                                                <Font name="System Bold" size="12.0"/>
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="categorieYahtzee" maxHeight="1.7976931348623157E308"
+                                                maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                                                text="YAHTZEE!" VBox.vgrow="ALWAYS">
+                                            <font>
+                                                <Font name="System Bold" size="12.0"/>
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="categorieChance" maxHeight="1.7976931348623157E308"
+                                                maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="chance"
+                                                VBox.vgrow="ALWAYS">
+                                            <font>
+                                                <Font name="System Bold" size="12.0"/>
+                                            </font>
+                                        </Button>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                        <HBox alignment="BOTTOM_CENTER" prefHeight="19.0" prefWidth="292.0" VBox.vgrow="ALWAYS">
+                            <children>
+                                <VBox alignment="BOTTOM_LEFT" prefHeight="400.0" prefWidth="400.0">
+                                    <children>
+                                        <Text fx:id="worpText" strokeType="OUTSIDE" strokeWidth="0.0" text="Worp: 0">
+                                            <font>
+                                                <Font name="System Bold" size="12.0"/>
+                                            </font>
+                                        </Text>
+                                        <Text fx:id="rondeText" strokeType="OUTSIDE" strokeWidth="0.0" text="Ronde: 0">
+                                            <font>
+                                                <Font name="System Bold" size="12.0"/>
+                                            </font>
+                                        </Text>
+                                    </children>
+                                </VBox>
+                                <VBox alignment="BOTTOM_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="400.0"
+                                      prefWidth="400.0">
+                                    <children>
+                                        <Button fx:id="nieuwspelButton" mnemonicParsing="false" text="Nieuw Spel">
+                                            <font>
+                                                <Font name="System Bold" size="12.0"/>
+                                            </font>
+                                        </Button>
+                                    </children>
+                                </VBox>
+                                <VBox layoutX="169.0" layoutY="10.0" prefHeight="400.0" prefWidth="400.0"/>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <ImageView fx:id="questionMark" fitHeight="33.0" fitWidth="33.0" opacity="0.36" pickOnBounds="true"
+                           preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                    <image>
+                        <Image url="@q.png"/>
+                    </image>
+                </ImageView>
+                <VBox fx:id="introContent" layoutX="10.0" layoutY="10.0" AnchorPane.bottomAnchor="0.0"
+                      AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <HBox alignment="CENTER" prefHeight="400.0" prefWidth="292.0" VBox.vgrow="ALWAYS">
+                            <children>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Welk speltype wilt u spelen?">
+                                    <font>
+                                        <Font name="System Bold" size="15.0"/>
+                                    </font>
+                                </Text>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="400.0" prefWidth="292.0" VBox.vgrow="ALWAYS">
+                            <children>
+                                <VBox alignment="CENTER_RIGHT" prefHeight="296.0" prefWidth="400.0">
+                                    <children>
+                                        <Button fx:id="introNormaalButton" minWidth="70.0" mnemonicParsing="false"
+                                                text="Normaal">
+                                            <font>
+                                                <Font name="System Bold" size="12.0"/>
+                                            </font>
+                                        </Button>
+                                    </children>
+                                </VBox>
+                                <VBox prefHeight="296.0" prefWidth="400.0"/>
+                                <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="296.0"
+                                      prefWidth="400.0">
+                                    <children>
+                                        <Button fx:id="introTestButton" minWidth="70.0" mnemonicParsing="false"
+                                                text="Test">
+                                            <font>
+                                                <Font name="System Bold" size="12.0"/>
+                                            </font>
+                                        </Button>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                        <HBox alignment="BOTTOM_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="400.0"
+                              prefWidth="292.0"/>
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

@@ -1,0 +1,33 @@
+.text-area *.text {
+    -fx-text-alignment: center;
+}
+
+#aboutInfo.text-area *.text {
+    -fx-text-alignment: left;
+}
+
+#aboutInfo.text-area {
+    -fx-background-color: rgba(214, 214, 214, 0.4);
+}
+
+#aboutInfo.text-area .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+#aboutInfo.text-area .scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+#aboutInfo.text-area .scroll-pane .content {
+    -fx-background-color: transparent;
+}
+
+#highlightedButton.button {
+    -fx-background-color: linear-gradient(#ffd65b, #e68400),
+    linear-gradient(#ffef84, #f2ba44),
+    linear-gradient(#ffea6a, #efaa22),
+    linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),
+    linear-gradient(from 0% 0% to 15% 50%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+    -fx-background-insets: 0, 1, 2, 3, 0;
+    -fx-font-weight: bold;
+}

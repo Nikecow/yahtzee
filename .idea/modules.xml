@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Yahtzee.iml" filepath="$PROJECT_DIR$/.idea/modules/Yahtzee.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Yahtzee_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Yahtzee_main.iml" group="Yahtzee" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Yahtzee_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Yahtzee_test.iml" group="Yahtzee" />
+    </modules>
+  </component>
+</project>
