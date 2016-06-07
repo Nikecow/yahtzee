@@ -9,7 +9,7 @@ version '1.2' //TODO: Add git build number and commit tag like Unity project
 sourceCompatibility = JavaVersion.current()
 targetCompatibility = sourceCompatibility
 
-//Custom attributes TODO: Create Gradle plugin for this
+//Custom attributes TODO: https://github.com/nebula-plugins/gradle-info-plugin/blob/master/README.md replace
 def title = 'Yahtzee'
 def mainClass = 'com.nikecow.yahtzee.gui.Main'
 def gradleVersionString = "2.14-rc-2"
