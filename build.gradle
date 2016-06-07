@@ -1,57 +1,53 @@
+
 plugins {
     id "groovy"
     id "java"
     id "idea"
+    id 'nebula.plugin-plugin' version '4.18.0'
 }
+// TODO: Applicationinfo plugin maken
+
+
 //Grade attributes
 group 'com.nikecow'
-version '1.2' //TODO: Add git build number and commit tag like Unity project
+//version '1.2'
 sourceCompatibility = JavaVersion.current()
 targetCompatibility = sourceCompatibility
 
 //Custom attributes TODO: https://github.com/nebula-plugins/gradle-info-plugin/blob/master/README.md replace
-def title = 'Yahtzee'
 def mainClass = 'com.nikecow.yahtzee.gui.Main'
-def gradleVersionString = "2.14-rc-2"
 def groovyVersionString = "2.4.6"
-def javaVersion = System.getProperty("java.version")
 def vendor = 'nikecow.com'
-def creator = "Nico van Duuren"
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = "2.14-rc-5";
+}
+
+
+contacts {
+    'nicovanduuren@gmail.com' {
+        moniker 'Nico van Duuren'
+        github 'Nikecow'
+    }
+}
+
+jar {
+    exclude("design")
+    manifest {
+        attributes 'Main-Class': mainClass
+//        atrributes 'Git': //TODO: Add git version
+        attributes 'Groovy': groovyVersionString
+        attributes 'Vendor': vendor
+        attributes 'Gui': com.sun.javafx.runtime.VersionInfo.getRuntimeVersion();
+    }
+}
 
 repositories {
     mavenCentral()
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = gradleVersionString;
-}
-
-jar {
-    exclude("design")
-    archiveName = title + ".jar"
-    manifest {
-        attributes 'Title': title
-        attributes 'Main-Class': mainClass
-        attributes 'Gradle': gradleVersionString
-        attributes 'Groovy': groovyVersionString
-        attributes 'Java': javaVersion
-        attributes 'Version': version
-        attributes 'Date': getDate()
-        attributes 'Vendor': vendor
-        attributes 'Creator': creator
-        attributes 'Gui': com.sun.javafx.runtime.VersionInfo.getRuntimeVersion();
-    }
-}
-
-
 dependencies {
     compile 'org.codehaus.groovy:groovy-all:' + groovyVersionString
     testCompile group: 'junit', name: 'junit', version: '4.11'
-
-}
-
-def getDate() {
-    def date = new Date()
-    def formattedDate = date.format('dd-MM-YYYY')
-    return formattedDate
 }

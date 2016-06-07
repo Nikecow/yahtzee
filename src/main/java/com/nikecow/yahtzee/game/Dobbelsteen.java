@@ -1,5 +1,4 @@
 package com.nikecow.yahtzee.game;
-
 import java.util.Random;
 
 /**
