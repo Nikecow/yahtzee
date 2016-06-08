@@ -292,16 +292,16 @@ public class Controller
         aboutTitle.setText(ApplicationInfo.getGlobalVariables("Title"));
         aboutInfo.setText
                 (
-                        "Version: " + ApplicationInfo.getGlobalVariables("Version") + "\n\n" +
+                        "Version: " + ApplicationInfo.getGlobalVariables("Implementation-Version") + "-" + ApplicationInfo.getGlobalVariables("Change") + "\n\n" +
                                 "Built with: " + "\n" +
-                                "Java " + ApplicationInfo.getGlobalVariables("Java") + "\n" +
+                                "Java " + ApplicationInfo.getGlobalVariables("Build-Java-Version") + "\n" +
                                 "JavaFX " + ApplicationInfo.getGlobalVariables("Gui") + "\n" +
-                                "Gradle " + ApplicationInfo.getGlobalVariables("Gradle") + "\n" +
+                                "Gradle " + ApplicationInfo.getGlobalVariables("Gradle-Version") + "\n" +
                                 "Groovy " + ApplicationInfo.getGlobalVariables("Groovy") + "\n\n" +
                                 "By: " + "\n" +
-                                ApplicationInfo.getGlobalVariables("Creator") + "\n" +
+                                ApplicationInfo.getGlobalVariables("Full-Name") + "\n" +
                                 ApplicationInfo.getGlobalVariables("Vendor") + "\n" +
-                                ApplicationInfo.getGlobalVariables("Date")
+                                ApplicationInfo.getGlobalVariables("Build-Date")
                 );
     }
 
