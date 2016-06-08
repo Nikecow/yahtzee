@@ -10,15 +10,16 @@ plugins {
 
 //Grade attributes
 group 'com.nikecow'
-//version '1.2'
+version '1.0'
 sourceCompatibility = JavaVersion.current()
+
 targetCompatibility = sourceCompatibility
 
 //Custom attributes TODO: https://github.com/nebula-plugins/gradle-info-plugin/blob/master/README.md replace
 def mainClass = 'com.nikecow.yahtzee.gui.Main'
 def groovyVersionString = "2.4.6"
 def vendor = 'nikecow.com'
-
+def title = 'Yahtzee'
 
 task wrapper(type: Wrapper) {
     gradleVersion = "2.14-rc-5";
@@ -35,6 +36,7 @@ contacts {
 jar {
     exclude("design")
     manifest {
+        attributes 'Title': title
         attributes 'Main-Class': mainClass
 //        atrributes 'Git': //TODO: Add git version
         attributes 'Groovy': groovyVersionString
