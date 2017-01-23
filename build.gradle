@@ -10,7 +10,7 @@ plugins {
 
 //Grade attributes
 group 'com.nikecow'
-version '1.0'
+version '1.1'
 sourceCompatibility = JavaVersion.current()
 targetCompatibility = sourceCompatibility
 
@@ -22,7 +22,7 @@ def title = 'Yahtzee'
 def fullName = 'Nico van Duuren'
 
 task wrapper(type: Wrapper) {
-    gradleVersion = "2.14-rc-5";
+    gradleVersion = "2.14-rc-5"
 }
 
 
@@ -42,7 +42,7 @@ jar {
 //        atrributes 'Git': //TODO: Add git version
         attributes 'Groovy': groovyVersionString
         attributes 'Vendor': vendor
-        attributes 'Gui': com.sun.javafx.runtime.VersionInfo.getRuntimeVersion();
+        attributes 'Gui': com.sun.javafx.runtime.VersionInfo.getRuntimeVersion()
     }
 }
 

@@ -50,6 +50,7 @@ public class Controller
     @FXML
     Text rondeText, worpText;
 
+    private static final Yahtzee YAHTZEE = Main.y;
     private ArrayList<Integer> behoudenWorpen = new ArrayList<>();
     private ArrayList<ImageView> dobbelFields = new ArrayList<>();
     private ArrayList<TextArea> categorieFields = new ArrayList<>();
@@ -59,7 +60,6 @@ public class Controller
 
     @Override // This method is called by the FXMLLoader when initialization is complete
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
-        setSize();
         initPanes();
         initArrays();
         loadDices();
@@ -67,6 +67,7 @@ public class Controller
         setAboutInfo();
         setListeners();
     }
+
 
     private void initArrays() {
         dobbelFields.addAll(Arrays.asList(dobbelField1, dobbelField2, dobbelField3, dobbelField4, dobbelField5));
@@ -100,7 +101,7 @@ public class Controller
             initGamePanes();
         });
         introTestButton.setOnAction((event) -> {
-            Main.y.maxAantalWorpen = 999;
+            YAHTZEE.maxAantalWorpen = 999;
             initGamePanes();
         });
     }
@@ -131,13 +132,13 @@ public class Controller
         gooiButton.setOnAction((event) -> {
             resetHighlights();
             werpDobbelstenen();
-            setCategorieTextArea(Main.y.berekenWorp(worpen));
+            setCategorieTextArea(YAHTZEE.berekenWorp(worpen));
             setHighlightButton();
             setGameInfo();
         });
         nieuwspelButton.setOnAction((event) -> {
             resetFields();
-            Main.y.resetGame();
+            YAHTZEE.resetGame();
             setGameInfo();
             gooiButton.setDisable(false);
         });
@@ -150,8 +151,8 @@ public class Controller
     }
 
     private void setHighlightButton() {
-        List<Integer> selectedCategories = Main.y.getSelectedCategories();
-        List<Integer> worpenMinusSelected = new ArrayList<>(Main.y.getScores());
+        List<Integer> selectedCategories = YAHTZEE.getSelectedCategories();
+        List<Integer> worpenMinusSelected = new ArrayList<>(YAHTZEE.getScores());
 
         // Remove the already selected categories from the possible highest score
         for (int i = 0; i < categorieButtons.size(); i++) {
@@ -176,20 +177,19 @@ public class Controller
     private void setCategorieTextArea(ArrayList<Integer> scores) {
         for (int i = 0; i < categorieFields.size(); i++) {
             categorieFields.get(i).setText(scores.get(i).toString());
-
         }
     }
 
     private void werpDobbelstenen() {
-        int huidAantalWorpen = Main.y.getHuidigAantalWorpen();
-        worpen = Main.y.gooiDobbelstenen(behoudenWorpen);
+        int huidAantalWorpen = YAHTZEE.getHuidigAantalWorpen();
+        worpen = YAHTZEE.gooiDobbelstenen(behoudenWorpen);
 
-        if (huidAantalWorpen < Main.y.maxAantalWorpen) {
+        if (huidAantalWorpen < YAHTZEE.maxAantalWorpen) {
             for (int i = 0; i < worpen.size(); i++) {
                 dobbelFields.get(i).setImage(dobbelStenenPictures[worpen.get(i)]);
             }
         }
-        if (Main.y.getHuidigAantalWorpen() == Main.y.maxAantalWorpen) {
+        if (YAHTZEE.getHuidigAantalWorpen() == YAHTZEE.maxAantalWorpen) {
             gooiButton.setDisable(true);
         }
     }
@@ -197,19 +197,19 @@ public class Controller
     private void gameCategoryListeners() {
         for (Button categorie : categorieButtons) {
             categorie.setOnAction((event) -> {
-                if (Main.y.getHuidigAantalWorpen() < 1) {
+                if (YAHTZEE.getHuidigAantalWorpen() < 1) {
                     return;
                 }
                 categorie.setDisable(true);
-                Main.y.resetHuidigAantalWorpen();
-                Main.y.addHuidigRonde();
-                Main.y.selectCategory(categorieButtons.indexOf(categorie));
-                setCategorieTextArea(Main.y.berekenWorp(worpen));
+                YAHTZEE.resetHuidigAantalWorpen();
+                YAHTZEE.addHuidigRonde();
+                YAHTZEE.selectCategory(categorieButtons.indexOf(categorie));
+                setCategorieTextArea(YAHTZEE.berekenWorp(worpen));
                 setGameInfo();
                 resetDobbels();
                 resetHighlights();
                 gooiButton.setDisable(false);
-                if (Main.y.getHuidigRonde() == 13) {
+                if (YAHTZEE.getHuidigRonde() == 13) {
                     gooiButton.setDisable(true);
                 }
             });
@@ -250,7 +250,7 @@ public class Controller
             ImageView textField = dobbelFields.get(i);
             int field = i;
             textField.setOnMouseClicked((event) -> {
-                        if (Main.y.getHuidigAantalWorpen() < 1 || Main.y.getHuidigAantalWorpen() == Main.y.maxAantalWorpen) {
+                        if (YAHTZEE.getHuidigAantalWorpen() < 1 || YAHTZEE.getHuidigAantalWorpen() == YAHTZEE.maxAantalWorpen) {
                             return;
                         }
                         if (!behoudenWorpen.contains(field)) {
@@ -267,24 +267,17 @@ public class Controller
 
     private void setGameInfo() {
         String rondeTextString;
-        if (Main.y.getHuidigRonde() > 0) {
-            totaalField.setText(String.valueOf(Main.y.getTotaal()));
+        if (YAHTZEE.getHuidigRonde() > 0) {
+            totaalField.setText(String.valueOf(YAHTZEE.getTotaal()));
         }
-        worpText.setText("Worp: " + String.valueOf(Main.y.getHuidigAantalWorpen()) + "/" + String.valueOf(Main.y.maxAantalWorpen));
-        if (Main.y.getHuidigRonde() == Yahtzee.maxAantalRonden) {
+        worpText.setText("Worp: " + String.valueOf(YAHTZEE.getHuidigAantalWorpen()) + "/" + String.valueOf(YAHTZEE.maxAantalWorpen));
+        if (YAHTZEE.getHuidigRonde() == Yahtzee.maxAantalRonden) {
             rondeTextString = "Afgelopen";
 
         } else {
-            rondeTextString = "Ronde: " + String.valueOf(Main.y.getHuidigRonde() + 1) + "/" + String.valueOf(Yahtzee.maxAantalRonden);
+            rondeTextString = "Ronde: " + String.valueOf(YAHTZEE.getHuidigRonde() + 1) + "/" + String.valueOf(Yahtzee.maxAantalRonden);
         }
         rondeText.setText(rondeTextString);
-    }
-
-
-    private void setSize() {
-        Main.prefWidth = mainPane.getPrefWidth();
-        Main.prefHeight = mainPane.getPrefHeight();
-
     }
 
     private void setAboutInfo() {
